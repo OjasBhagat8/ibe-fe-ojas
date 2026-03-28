@@ -1,0 +1,147 @@
+@use '../../../styles/housekeeping-tokens' as *;
+
+.sidebar {
+  width: 208px;
+  min-height: 100vh;
+  background: $hk-navy;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 16px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logoBox {
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.logoText {
+  color: #fff !important;
+  font-weight: 700 !important;
+  font-size: 0.9rem !important;
+}
+
+.brandName {
+  color: #fff !important;
+  font-weight: 600 !important;
+  font-size: 0.9rem !important;
+}
+
+.staffInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.avatar {
+  width: 48px !important;
+  height: 48px !important;
+  background: rgba(255, 255, 255, 0.2) !important;
+  color: #fff !important;
+  font-weight: 700 !important;
+  font-size: 1.2rem !important;
+  margin-bottom: 8px;
+}
+
+.staffName {
+  color: #fff !important;
+  font-weight: 600 !important;
+  font-size: 0.85rem !important;
+  text-align: center;
+}
+
+.nav {
+  flex: 1;
+  padding: 8px 0 !important;
+}
+
+.navItem {
+  padding: 10px 16px !important;
+  border-radius: 0 !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+  position: relative;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #fff !important;
+
+    .navIcon {
+      color: #fff !important;
+
+      svg {
+        color: #fff !important;
+      }
+    }
+  }
+
+  &.active {
+    background: rgba(255, 255, 255, 0.15) !important;
+    color: #fff !important;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: #fff;
+      border-radius: 0 2px 2px 0;
+    }
+
+    .navIcon {
+      color: #fff !important;
+
+      svg {
+        color: #fff !important;
+      }
+    }
+  }
+}
+
+.navIcon {
+  min-width: 36px !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+
+  svg {
+    font-size: 1.1rem !important;
+  }
+}
+
+.navLabel {
+  span {
+    font-size: 0.85rem !important;
+    font-weight: 500;
+  }
+}
+
+.footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 0;
+}
+
+.hamburger {
+  position: fixed !important;
+  top: 12px;
+  left: 12px;
+  z-index: 1200;
+  background: $hk-navy !important;
+  color: #fff !important;
+  border-radius: 8px !important;
+  padding: 8px !important;
+}

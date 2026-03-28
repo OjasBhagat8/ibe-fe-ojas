@@ -1,0 +1,28 @@
+@use '../../../styles/housekeeping-tokens' as *;
+
+.page {
+  width: min(100%, 980px);
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.title {
+  font-weight: 700 !important;
+  color: $hk-text;
+}
+
+.date {
+  color: $hk-text-muted !important;
+  margin-top: 4px !important;
+}
+
+.taskList {
+  margin-top: 20px;
+  max-width: 920px;
+  margin-left: auto;
+  margin-right: auto;
+}
