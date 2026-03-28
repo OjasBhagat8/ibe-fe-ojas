@@ -1,0 +1,140 @@
+@use '../../../styles/housekeeping-tokens' as *;
+
+.page {
+  width: min(100%, 1040px);
+  margin: 0 auto;
+}
+
+.title {
+  font-weight: 700 !important;
+  color: $hk-text;
+  margin-bottom: 20px !important;
+  text-align: center;
+}
+
+.topRow {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 24px;
+  justify-content: center;
+
+  @media (max-width: 700px) {
+    flex-direction: column;
+  }
+}
+
+.card {
+  flex: 1;
+  border-radius: $hk-card-radius !important;
+}
+
+.cardContent {
+  padding: 24px !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+
+  &:last-child {
+    padding-bottom: 24px !important;
+  }
+}
+
+.cardTitle {
+  font-weight: 600 !important;
+  color: $hk-text;
+  align-self: flex-start;
+  width: 100%;
+}
+
+.timeCardContent {
+  align-items: center;
+}
+
+.timeCardTitle {
+  align-self: center;
+  text-align: center;
+}
+
+.ringWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.statRow {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+  justify-content: center;
+}
+
+.stat {
+  text-align: center;
+}
+
+.statCount {
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+}
+
+.statLabel {
+  font-size: 0.72rem !important;
+  color: $hk-text-muted !important;
+  margin-top: 4px !important;
+}
+
+.hoursDisplay {
+  font-size: 3rem !important;
+  font-weight: 700 !important;
+  color: $hk-navy;
+  line-height: 1 !important;
+}
+
+.hoursUnit {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: $hk-text-muted;
+}
+
+.timeBarWrap {
+  width: min(100%, 520px);
+  margin: 0 auto;
+}
+
+.taskListSection {
+  background: #fff;
+  border-radius: $hk-card-radius;
+  padding: 20px;
+  box-shadow: $hk-card-shadow;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  font-weight: 600 !important;
+  color: $hk-text;
+  margin-bottom: 12px !important;
+}
+
+.taskRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid $hk-border;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.taskRoom {
+  font-weight: 600 !important;
+  color: $hk-text;
+}
+
+.taskChips {
+  display: flex;
+  gap: 6px;
+}

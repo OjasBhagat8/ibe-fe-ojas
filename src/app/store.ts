@@ -16,6 +16,10 @@ import roomReducer from "../features/roomCard/roomResultSlice";
 import dealsReducer from "../features/Deals/dealSlice";
 import roomResultsPersistedReducer from "../features/roomResultsPersisted/roomResultsPersistedSlice";
 import bookingReducer, { persistBookingState } from "../features/booking/bookingSlice";
+import housekeepingAuthReducer from "../features/housekeepingAuth/housekeepingAuthSlice";
+import tasksReducer from "../features/tasks/tasksSlice";
+import attendanceReducer from "../features/attendance/attendanceSlice";
+import leaveReducer from "../features/leave/leaveSlice";
 
 const rootReducer = combineReducers({
   tenant: tenantReducer,
@@ -24,13 +28,17 @@ const rootReducer = combineReducers({
   deals: dealsReducer,
   booking: bookingReducer,
   roomResultsPersisted: roomResultsPersistedReducer,
+  housekeepingAuth: housekeepingAuthReducer,
+  tasks: tasksReducer,
+  attendance: attendanceReducer,
+  leave: leaveReducer,
 });
 
 const persistedReducer = persistReducer(
   {
     key: "root",
     storage,
-    whitelist: ["roomResultsPersisted"],
+    whitelist: ["roomResultsPersisted", "housekeepingAuth"],
   },
   rootReducer,
 );

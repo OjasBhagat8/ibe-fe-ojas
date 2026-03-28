@@ -1,0 +1,28 @@
+@use '../../../styles/housekeeping-tokens' as *;
+
+.wrapper {
+  position: relative;
+  display: inline-flex;
+}
+
+.center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+.fraction {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: $hk-text;
+  line-height: 1;
+}
+
+.label {
+  font-size: 0.78rem;
+  color: $hk-text-muted;
+}

@@ -1,0 +1,131 @@
+export type TaskType = 'DEEP_CLEAN' | 'DAILY_CLEAN' | 'VACANT_CLEAN';
+export type TaskStatus = 'PENDING' | 'IN_PROGRESS' | 'COMPLETED';
+export type LeaveType = 'PLANNED' | 'SICK';
+export type LeaveStatus = 'APPROVED' | 'PENDING' | 'REJECTED';
+export type EmploymentType = 'STAFF' | 'SUPERVISOR';
+
+export interface HousekeepingTask {
+  taskId: string;
+  staffId: string;
+  staffName: string;
+  assignedByName: string | null;
+  roomNumber: string;
+  taskDate: string;
+  taskStatus: TaskStatus;
+  taskType: TaskType | null;
+  scheduledStartTime: string | null;
+  expectedEndTime: string | null;
+  estimatedDurationHours: number | null;
+  assignedAt: string;
+  startedAt: string | null;
+  completedAt: string | null;
+  notes: string | null;
+  message: string;
+}
+
+export interface TaskListResponse {
+  staffId: string;
+  staffName: string;
+  tasks: HousekeepingTask[];
+  message: string;
+}
+
+export interface AttendanceLog {
+  attendanceLogId: string | null;
+  staffId: string;
+  staffName: string;
+  logDate: string;
+  clockInTime: string | null;
+  clockOutTime: string | null;
+  totalWorkedHours: number | null;
+  message: string;
+}
+
+export interface AttendanceLogItem {
+  attendanceLogId: string;
+  logDate: string;
+  clockInTime: string | null;
+  clockOutTime: string | null;
+  totalWorkedHours: number | null;
+}
+
+export interface AttendanceLogsResponse {
+  staffId: string;
+  staffName: string;
+  message: string;
+  logs: AttendanceLogItem[];
+  page: number;
+  size: number;
+  totalElements: number;
+  totalPages: number;
+  isFirst: boolean;
+  isLast: boolean;
+}
+
+export interface LeaveBalance {
+  staffId: string;
+  staffName: string;
+  month: number;
+  year: number;
+  remainingPlannedLeaves: number;
+  remainingSickLeaves: number;
+  message: string;
+}
+
+export interface LeaveRecord {
+  leaveRequestId: string;
+  staffId: string;
+  staffName: string;
+  leaveType: LeaveType;
+  leaveStartDate: string;
+  leaveEndDate: string;
+  totalLeaveDays: number;
+  reason: string | null;
+  status: LeaveStatus;
+  message: string;
+}
+
+export interface ActiveLeavesResponse {
+  staffId: string;
+  staffName: string;
+  leaves: LeaveRecord[];
+  message: string;
+}
+
+export interface HousekeepingAuthState {
+  token: string | null;
+  staffId: string | null;
+  staffName: string | null;
+  employmentType: EmploymentType | null;
+  propertyId: string | null;
+  availabilityStatus: string | null;
+  loading: boolean;
+  error: string | null;
+}
+
+export interface LoginRequest {
+  email: string;
+  password: string;
+  propertyId: string;
+}
+
+export interface LoginResponse {
+  token: string;
+  staffId: string;
+  staffName: string;
+  employmentType: EmploymentType;
+  propertyId: string;
+  availabilityStatus: string;
+}
+
+export interface ApplyLeaveRequest {
+  staffId: string;
+  leaveType: LeaveType;
+  leaveStartDate: string;
+  leaveEndDate: string;
+  reason: string | null;
+}
+
+export interface UpdateTaskStatusRequest {
+  status: 'IN_PROGRESS' | 'COMPLETED';
+}
