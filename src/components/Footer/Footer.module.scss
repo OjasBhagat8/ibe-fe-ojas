@@ -1,0 +1,60 @@
+@use "../../styles/variables" as *;
+
+.footer {
+  width: 100%;
+  height: $footer-height;
+  background: $primary;
+  color: $white;
+  position: relative;
+  flex-shrink: 0;
+  z-index: 20;
+
+  display: flex;
+  justify-content: center;
+}
+
+.inner {
+  width: 100%;
+  max-width: none;
+  padding: 0 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footerLogo {
+  height: 45px;
+  width: auto;
+  filter: brightness(0) invert(1);
+}
+
+.brandName {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.copyright {
+  font-size: 15px;
+  opacity: 0.95;
+  max-width: 340px;
+  text-align: right;
+  line-height: 20px;
+  white-space: pre-line;
+}
+
+@media (max-width: 640px) {
+  .inner {
+    padding: 0 16px;
+  }
+
+  .footerLogo {
+    height: 24px;
+  }
+}

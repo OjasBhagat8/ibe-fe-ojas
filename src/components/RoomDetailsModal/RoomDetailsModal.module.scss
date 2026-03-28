@@ -1,0 +1,375 @@
+@use "../../styles/variables" as *;
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  overflow-y: auto;
+  padding: 108px 24px 74px;
+  background: rgba(20, 20, 20, 0.76);
+  margin-bottom: 40px;
+}
+
+.modal {
+  position: relative;
+  width: 100%;
+  max-width: 1240px;
+  max-height: calc(100vh - 160px);
+  overflow-y: auto;
+  background: #f4f4f4;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.36);
+}
+
+.modal,
+.modal button,
+.modal input,
+.modal label,
+.modal h2,
+.modal h3,
+.modal h4,
+.modal p,
+.modal span,
+.modal li {
+  font-family: $font-primary;
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.96);
+  color: #111111;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.closeButton img {
+  width: 10px;
+  height: 10px;
+  display: block;
+}
+
+.carousel {
+  position: relative;
+  height: 220px;
+  background: #d9d9d9;
+}
+
+.carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 44px;
+  border: none;
+  background: rgba(20, 20, 20, 0.28);
+  color: #ffffff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.leftArrow {
+  left: 0;
+}
+
+.rightArrow {
+  right: 0;
+}
+
+.content {
+  padding: 14px 18px 22px 48px;
+}
+
+.metaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 14px;
+  color: #707070;
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+.metaRow span {
+  position: relative;
+}
+
+.metaItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.metaItem img {
+  width: 12px;
+  height: 12px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.detailsGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 0.62fr);
+  gap: 22px;
+  margin-bottom: 22px;
+}
+
+.roomInfo h2,
+.amenitiesBlock h3,
+.section h3 {
+  margin: 0 0 10px;
+  color: #111111;
+  font-size: 20px;
+  font-weight:700;
+  line-height: 1.35;
+}
+
+.roomInfo p {
+  margin: 0;
+  color: #4a4a4a;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.amenitiesBlock h3,
+.section h3 {
+  font-size: 16px;
+}
+
+.amenitiesBlock ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  columns: 2;
+  column-gap: 22px;
+}
+
+.amenitiesBlock li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+  break-inside: avoid;
+  color: #333333;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.amenitiesBlock li img {
+  width: 10px;
+  height: 10px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.dealsList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 430px;
+}
+
+.packageCard {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 128px;
+  width: 100%;
+  max-width: 430px;
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.packageInfo {
+  padding: 12px 14px;
+}
+
+.packageInfo h4 {
+  margin: 0 0 8px;
+  color: #111111;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.packageInfo p {
+  margin: 0;
+  color: #666666;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.packagePrice {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 3px;
+  padding: 12px 10px;
+  background: #f1f1f1;
+  border-left: 1px solid #ececec;
+  text-align: right;
+}
+
+.priceValue {
+  color: #111111;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.packagePrice span {
+  color: #777777;
+  font-size: 11px;
+  line-height: 1.2;
+}
+
+.packagePrice button,
+.promoRow button {
+  min-width: 96px;
+  height: 28px;
+  border: none;
+  border-radius: 3px;
+  background: #2d2a7a;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.promoRow button {
+  min-width: 72px;
+  width: 72px;
+}
+
+.promoCode {
+  max-width: 280px;
+}
+
+.promoCode label {
+  display: block;
+  margin-bottom: 8px;
+  color: #444444;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.promoRow {
+  display: flex;
+  gap: 12px;
+}
+
+.promoRow input {
+  flex: 1;
+  min-width: 0;
+  height: 32px;
+  padding: 0 12px;
+  border: 1px solid #cccccc;
+  background: #ffffff;
+  color: #111111;
+  font-size: 14px;
+}
+
+.promoRow input:focus {
+  outline: none;
+  border-color: #2d2a7a;
+}
+
+.promoError {
+  margin-top: 8px;
+  color: #c0392b;
+  font-size: 13px;
+}
+
+@media (max-width: 768px) {
+  .overlay {
+    padding: 84px 12px 56px;
+  }
+
+  .modal {
+    max-height: calc(100vh - 112px);
+  }
+
+  .carousel {
+    height: 190px;
+  }
+
+  .content {
+    padding: 16px;
+  }
+
+  .detailsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .amenitiesBlock ul {
+    columns: 1;
+  }
+
+  .dealsList {
+    max-width: none;
+  }
+
+  .packageCard {
+    max-width: none;
+    grid-template-columns: minmax(0, 1fr) 132px;
+  }
+
+  .packagePrice {
+    border-left: 1px solid #ececec;
+    border-top: none;
+    align-items: flex-end;
+    justify-content: flex-start;
+    text-align: right;
+  }
+
+  .promoCode {
+    max-width: none;
+  }
+
+  .promoRow {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .promoRow input {
+    flex: 1;
+  }
+
+  .promoRow button {
+    width: 102px;
+    min-width: 102px;
+  }
+
+  .packagePrice button {
+    width: 100%;
+  }
+}
