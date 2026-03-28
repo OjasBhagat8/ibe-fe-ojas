@@ -17,6 +17,9 @@ import MyTasksPage from "../pages/housekeeping/MyTasks/MyTasksPage";
 import ClockInOutPage from "../pages/housekeeping/ClockInOut/ClockInOutPage";
 import ApplyLeavePage from "../pages/housekeeping/ApplyLeave/ApplyLeavePage";
 import ShiftProgressPage from "../pages/housekeeping/ShiftProgress/ShiftProgressPage";
+import SupervisorAuthGuard from "../layouts/SupervisorAuthGuard";
+import SupervisorDashboardPage from "../pages/housekeeping/SupervisorDashboard/SupervisorDashboardPage";
+import SupervisorLayout from "../layouts/SupervisorLayout";
 
 export const router = createBrowserRouter([
   {
@@ -42,46 +45,39 @@ export const router = createBrowserRouter([
   {
     path: "/:tenantName",
     children: [
-      // --- Booking flow (existing) ---
       {
         element: <AppLayout />,
         children: [
-          {
-            index: true,
-            element: <Landing />,
-          },
-          {
-            path: "room-results",
-            element: <RoomResults />,
-          },
-          {
-            path: "checkout",
-            element: <Checkout />,
-          },
-          {
-            path: "confirmation",
-            element: <Confirmation />,
-          },
-          {
-            path: "my-bookings",
-            element: <MyBookings />,
-          },
+          { index: true, element: <Landing /> },
+          { path: "room-results", element: <RoomResults /> },
+          { path: "checkout", element: <Checkout /> },
+          { path: "confirmation", element: <Confirmation /> },
+          { path: "my-bookings", element: <MyBookings /> },
         ],
       },
-
-      // --- Supervisor login (no auth guard) ---
       {
         path: "supervisor/login",
         element: <SupervisorLoginPage />,
       },
-
-      // --- Staff login (no auth guard) ---
       {
         path: "staff/login",
         element: <StaffLoginPage />,
       },
-
-      // --- Staff portal (protected) ---
+      {
+        path: "supervisor",
+        element: <SupervisorAuthGuard />,
+        children: [
+          {
+            element: <SupervisorLayout />,
+            children: [
+              {
+                path: "dashboard",
+                element: <SupervisorDashboardPage />,
+              },
+            ],
+          },
+        ],
+      },
       {
         path: "staff",
         element: <HousekeepingAuthGuard />,
@@ -89,26 +85,11 @@ export const router = createBrowserRouter([
           {
             element: <StaffLayout />,
             children: [
-              {
-                path: "overview",
-                element: <StaffOverviewPage />,
-              },
-              {
-                path: "tasks",
-                element: <MyTasksPage />,
-              },
-              {
-                path: "clock",
-                element: <ClockInOutPage />,
-              },
-              {
-                path: "leave",
-                element: <ApplyLeavePage />,
-              },
-              {
-                path: "progress",
-                element: <ShiftProgressPage />,
-              },
+              { path: "overview", element: <StaffOverviewPage /> },
+              { path: "tasks", element: <MyTasksPage /> },
+              { path: "clock", element: <ClockInOutPage /> },
+              { path: "leave", element: <ApplyLeavePage /> },
+              { path: "progress", element: <ShiftProgressPage /> },
             ],
           },
         ],
