@@ -129,3 +129,49 @@ export interface ApplyLeaveRequest {
 export interface UpdateTaskStatusRequest {
   status: 'IN_PROGRESS' | 'COMPLETED';
 }
+
+export interface DashboardRoomsToday {
+  total: number;
+  checkingOut: number;
+  occupied: number;
+  vacant: number;
+}
+
+export interface DashboardStaffOnDuty {
+  total: number;
+  morning: number;
+  afternoon: number;
+}
+
+export interface DashboardTasksCompleted {
+  completed: number;
+  total: number;
+  completionRate: number;
+}
+
+export interface TaskAllocationRow {
+  taskId: string;
+  roomNumber: string;
+  roomType: string | null;
+  assignedTo: string;
+  taskStatus: TaskStatus;
+  startTime: string | null;
+  endTime: string | null;
+}
+
+export interface StaffAvailabilityItem {
+  staffId: string;
+  staffName: string;
+  initials: string;
+  preferredShift: 'MORNING' | 'AFTERNOON' | null;
+  availabilityStatus: 'ON_DUTY' | 'OFF_DUTY' | 'ON_LEAVE' | 'SICK';
+}
+
+export interface SupervisorDashboardOverview {
+  date: string;
+  roomsToday: DashboardRoomsToday;
+  staffOnDuty: DashboardStaffOnDuty;
+  tasksCompleted: DashboardTasksCompleted;
+  taskAllocation: TaskAllocationRow[];
+  staffAvailability: StaffAvailabilityItem[];
+}
