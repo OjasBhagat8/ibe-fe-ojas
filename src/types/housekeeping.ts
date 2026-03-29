@@ -149,6 +149,12 @@ export interface DashboardTasksCompleted {
   completionRate: number;
 }
 
+export interface DashboardCapacityStatus {
+  status: 'SHORTFALL' | 'NO_DATA';
+  deficitHours: number;
+  additionalStaffNeeded: number;
+}
+
 export interface TaskAllocationRow {
   taskId: string;
   roomNumber: string;
@@ -167,11 +173,33 @@ export interface StaffAvailabilityItem {
   availabilityStatus: 'ON_DUTY' | 'OFF_DUTY' | 'ON_LEAVE' | 'SICK';
 }
 
+export interface RoomStatusItem {
+  roomNightInventoryId: string;
+  roomNumber: string;
+  roomType: string | null;
+  occupancyStatus: 'VACANT' | 'OCCUPIED' | 'CHECKING_IN' | 'CHECKING_OUT';
+  cleanedStatus: 'CLEAN' | 'DIRTY' | 'IN_PROGRESS';
+}
+
+export interface TaskOverviewRow {
+  taskId: string;
+  roomNumber: string | null;
+  roomType: string | null;
+  taskType: 'DEEP_CLEAN' | 'DAILY_CLEAN' | 'VACANT_CLEAN' | null;
+  assignedTo: string;
+  shiftName: string | null;
+  scheduledStartTime: string | null;
+  expectedEndTime: string | null;
+  estimatedDurationHours: number | null;
+  taskStatus: TaskStatus;
+}
+
 export interface SupervisorDashboardOverview {
   date: string;
   roomsToday: DashboardRoomsToday;
   staffOnDuty: DashboardStaffOnDuty;
   tasksCompleted: DashboardTasksCompleted;
+  capacityStatus: DashboardCapacityStatus;
   taskAllocation: TaskAllocationRow[];
   staffAvailability: StaffAvailabilityItem[];
 }
