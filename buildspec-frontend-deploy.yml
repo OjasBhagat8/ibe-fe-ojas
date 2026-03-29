@@ -1,0 +1,33 @@
+version: 0.2
+
+env:
+  shell: bash
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 20
+    commands:
+      - 'echo "Node version: $(node -v)"'
+      - 'echo "NPM version: $(npm -v)"'
+      - 'test -n "$FRONTEND_BUCKET" || (echo "FRONTEND_BUCKET is required" && exit 1)'
+      - 'test -n "$CLOUDFRONT_DISTRIBUTION_ID" || (echo "CLOUDFRONT_DISTRIBUTION_ID is required" && exit 1)'
+
+  pre_build:
+    commands:
+      - 'rm -rf dist'
+      - 'npm ci'
+      - 'echo "VITE_API_BASE_URL=${VITE_API_BASE_URL}" > .env.production'
+
+  build:
+    commands:
+      - 'export NODE_OPTIONS="--max-old-space-size=4096"'
+      - 'echo "NODE_OPTIONS=${NODE_OPTIONS}"'
+      - 'npm run build'
+      - 'test -d dist || (echo "dist folder not found" && exit 1)'
+
+  post_build:
+    commands:
+      - 'if [ "$CODEBUILD_BUILD_SUCCEEDING" != "1" ]; then echo "Skipping deploy because build failed"; exit 0; fi'
+      - 'aws cloudfront create-invalidation --distribution-id ${CLOUDFRONT_DISTRIBUTION_ID} --paths "/*"'
+      - 'aws s3 sync dist/ s3://${FRONTEND_BUCKET}/ --delete'

@@ -1,0 +1,49 @@
+@use "../../styles/variables" as *;
+
+.panel {
+	background: #e8e8e8;
+	border-radius: $radius-sm;
+	padding: $space-xxl;
+}
+
+.title {
+	font-size: $font-xl;
+	font-weight: $font-bold;
+	margin-bottom: $space-xl;
+}
+
+.group {
+	border-bottom: 1px solid $color-disabled;
+	padding: $space-md 0;
+}
+
+.groupHeader {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: transparent;
+	border: none;
+	font-size: $font-medium;
+	cursor: pointer;
+	text-align: left;
+}
+
+.options {
+	display: flex;
+	flex-direction: column;
+	gap: $space-sm;
+	margin-top: $space-md;
+}
+
+.option {
+	display: flex;
+	align-items: center;
+	gap: $space-sm;
+	font-size: $font-medium;
+}
+
+.button {
+	font-size: $font-medium;
+	color: $color-light-gray;
+}

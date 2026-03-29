@@ -1,0 +1,19 @@
+@use '../styles/housekeeping-tokens' as *;
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+  background: $hk-bg;
+  align-items: flex-start;
+}
+
+.main {
+  flex: 1;
+  min-height: 100vh;
+  padding: 32px;
+  overflow: visible;
+
+  @media (max-width: 1023px) {
+    padding: 64px 16px 24px; // room for hamburger
+  }
+}

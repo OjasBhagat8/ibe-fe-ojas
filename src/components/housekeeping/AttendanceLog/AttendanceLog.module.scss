@@ -1,0 +1,22 @@
+@use '../../../styles/housekeeping-tokens' as *;
+
+.table {
+  width: 100%;
+}
+
+.label {
+  color: $hk-text-muted !important;
+  font-size: 0.82rem !important;
+  font-weight: 500 !important;
+  border-bottom: 1px solid $hk-border !important;
+  padding: 8px 0 !important;
+  width: 50%;
+}
+
+.value {
+  color: $hk-text !important;
+  font-size: 0.82rem !important;
+  font-weight: 600 !important;
+  border-bottom: 1px solid $hk-border !important;
+  padding: 8px 0 !important;
+}

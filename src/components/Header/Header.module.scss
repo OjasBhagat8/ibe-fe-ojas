@@ -1,0 +1,225 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.header {
+  width: 100%;
+  min-height: $header-height;
+  background: $white;
+  border-bottom: 1px solid $border;
+
+  display: flex;
+  justify-content: center;
+}
+
+.inner {
+  width: 100%;
+  max-width: none;
+  padding: 0 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-height: $header-height;
+}
+
+.branding {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  flex: 1 1 auto;
+
+  text-decoration: none;
+  color: $primary;
+}
+
+.logoImage {
+  max-height: 45px;
+  max-width: 160px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.logoText {
+  font-family: $font-lato;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.suffix {
+  font-family: $font-lato;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.15;
+  white-space: nowrap;
+}
+
+@media (max-width: 960px) {
+  .inner {
+    padding: 12px 20px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .branding {
+    flex: 1 1 100%;
+  }
+
+  .suffix {
+    white-space: normal;
+  }
+
+  .right {
+    width: 100%;
+    justify-content: flex-end;
+    gap: 12px;
+  }
+
+  .userInfo {
+    max-width: min(100%, 240px);
+  }
+}
+
+@media (max-width: 640px) {
+  .header {
+    min-height: 0;
+  }
+
+  .inner {
+    min-height: 0;
+    padding: 10px 16px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .logoImage {
+    height: 34px;
+    max-width: 120px;
+  }
+
+  .branding {
+    gap: 8px;
+  }
+
+  .suffix {
+    font-size: 15px;
+  }
+
+  .right {
+    width: 100%;
+    gap: 10px;
+    justify-content: space-between;
+  }
+
+  .userInfo {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 0 1 auto;
+  min-width: 0;
+  margin-left: auto;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+  padding: 7px 12px;
+  border: 1px solid rgba($primary, 0.14);
+  border-radius: 999px;
+  background: rgba($primary, 0.04);
+}
+
+.welcomeText {
+  font-family: $font-lato;
+  font-size: 12px;
+  font-weight: 400;
+  color: $gray;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.userName {
+  max-width: 170px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: $font-lato;
+  font-size: 12px;
+  font-weight: 700;
+  color: $text-dark;
+  line-height: 1;
+}
+
+.myBookings {
+  font-family: $font-lato;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  padding: 0 2px;
+
+  text-decoration: none;
+  color: $text-dark;
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+.adminLink {
+  min-width: 84px;
+  height: 34px;
+  padding: 0 14px;
+  border: 1px solid rgba($primary, 0.2);
+  background: rgba($primary, 0.06);
+  color: $primary;
+  font-family: $font-lato;
+  font-weight: 700;
+  font-size: 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background: rgba($primary, 0.12);
+  }
+}
+
+.loginBtn {
+  min-width: 84px;
+  height: 34px;
+  padding: 0 14px;
+  border: 0;
+
+  background: $primary;
+  color: $white;
+
+  font-family: $font-lato;
+  font-weight: 700;
+  font-size: 12px;
+
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.92;
+  }
+
+  &:disabled {
+    cursor: wait;
+    opacity: 0.7;
+  }
+}

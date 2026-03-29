@@ -1,0 +1,59 @@
+@use '../../../styles/housekeeping-tokens' as *;
+
+.page {
+  width: min(100%, 720px);
+  margin: 0 auto;
+}
+
+.title {
+  font-weight: 700 !important;
+  color: $hk-text;
+  text-align: center;
+}
+
+.date {
+  color: $hk-text-muted !important;
+  margin-bottom: 20px !important;
+  text-align: center;
+}
+
+.card {
+  border-radius: $hk-card-radius !important;
+  margin-bottom: 24px;
+}
+
+.cardContent {
+  padding: 32px !important;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+
+  &:last-child {
+    padding-bottom: 32px !important;
+  }
+}
+
+.infoTitle {
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  color: $hk-text;
+}
+
+.todayWrap {
+  width: 100%;
+}
+
+.logSection {
+  margin-top: 8px;
+  background: $hk-white;
+  border-radius: $hk-card-radius;
+  padding: 20px;
+  box-shadow: $hk-card-shadow;
+}
+
+.logTitle {
+  font-weight: 600 !important;
+  color: $hk-text;
+  margin-bottom: 12px !important;
+}

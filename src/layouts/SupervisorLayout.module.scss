@@ -1,0 +1,18 @@
+@use '../styles/housekeeping-tokens' as *;
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+  background: #ececf1;
+  align-items: flex-start;
+}
+
+.main {
+  flex: 1;
+  min-height: 100vh;
+  padding: 26px 28px;
+
+  @media (max-width: 1023px) {
+    padding: 64px 14px 18px;
+  }
+}

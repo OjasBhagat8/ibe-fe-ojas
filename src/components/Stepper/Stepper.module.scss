@@ -1,0 +1,193 @@
+.stepperWrapper {
+  min-height: 8vh;
+  height: auto;
+  width: 100%;
+  padding: 1.2vh 2vw;
+  background: #f3f3f3;
+}
+
+.styledStepper {
+  width: 34%;
+  margin: 0 auto;
+
+  :global(.MuiStepLabel-label) {
+    font-size: 0.95vw;
+    font-weight: 400;
+    color: #5f5f5f;
+    text-align: center;
+  }
+
+  :global(.MuiStepLabel-label.Mui-active) {
+    color: #5f5f5f;
+  }
+
+  :global(.MuiStepLabel-label.Mui-completed) {
+    color: #5f5f5f;
+  }
+}
+
+/* Connector */
+.connectorAlternativeLabel {
+  top: 13px;
+  left: calc(-50% + 13px);
+  right: calc(50% + 13px);
+}
+
+.connectorLine {
+  height: 2px;
+  border: 0;
+  background-color: #bdbdbd;
+  border-radius: 100vw;
+}
+
+.connectorActive {
+  .connectorLine {
+    background-color: #232b7c;
+  }
+}
+
+.connectorCompleted {
+  .connectorLine {
+    background-color: #232b7c;
+  }
+}
+
+.stepIconRoot {
+  width: 26px;
+  height: 26px;
+  min-width: 26px;
+  min-height: 26px;
+
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #fff;
+  background-color: #cfcfcf;
+
+  position: relative;
+  z-index: 1;
+}
+
+.active {
+  background-color: #232b7c;
+}
+
+.activeLastStep {
+  background-color: #b42318;
+}
+
+.completed {
+  background-color: #232b7c;
+}
+
+/* Large tablets / small laptops */
+@media (max-width: 1024px) {
+  .stepperWrapper {
+    padding: 1.5vh 3vw;
+  }
+
+  .styledStepper {
+    width: 42%;
+
+    :global(.MuiStepLabel-label) {
+      font-size: 1.4vw;
+      margin-top: 0.6vh;
+    }
+  }
+
+  .stepIconRoot {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    min-height: 24px;
+  }
+
+  .connectorAlternativeLabel {
+    top: 12px;
+    left: calc(-50% + 12px);
+    right: calc(50% + 12px);
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .stepperWrapper {
+    padding: 2vh 4vw;
+  }
+
+  .styledStepper {
+    width: 58%;
+
+    :global(.MuiStepLabel-label) {
+      font-size: 2vw;
+      margin-top: 0.5vh;
+    }
+  }
+
+  .stepIconRoot {
+    width: 22px;
+    height: 22px;
+    min-width: 22px;
+    min-height: 22px;
+  }
+
+  .connectorAlternativeLabel {
+    top: 11px;
+    left: calc(-50% + 11px);
+    right: calc(50% + 11px);
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .stepperWrapper {
+    padding: 2vh 5vw;
+  }
+
+  .styledStepper {
+    width: 88%;
+
+    :global(.MuiStepLabel-label) {
+      font-size: 3vw;
+      margin-top: 0.4vh;
+      line-height: 1.2;
+    }
+  }
+
+  .stepIconRoot {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    min-height: 20px;
+  }
+
+  .connectorAlternativeLabel {
+    top: 10px;
+    left: calc(-50% + 10px);
+    right: calc(50% + 10px);
+  }
+}
+
+/* Very small mobile */
+@media (max-width: 360px) {
+  .styledStepper {
+    :global(.MuiStepLabel-label) {
+      font-size: 3.4vw;
+    }
+  }
+
+  .stepIconRoot {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    min-height: 18px;
+  }
+
+  .connectorAlternativeLabel {
+    top: 9px;
+    left: calc(-50% + 9px);
+    right: calc(50% + 9px);
+  }
+}

@@ -1,0 +1,49 @@
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+}
+
+.label {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: #2f2f2f;
+}
+
+.propertyField {
+  width: 100%;
+
+  :global(.MuiInputBase-root) {
+    min-height: 48px;
+    border-radius: 4px;
+    background: #ffffff;
+    font-size: 16px;
+    color: #2f2f2f;
+  }
+  :global(.MuiSelect-select) {
+    display: flex;
+    align-items: center;
+    min-height: 56px;
+    padding: 0 48px 0 16px !important;
+    box-sizing: border-box;
+  }
+
+  :global(.MuiSelect-icon) {
+    right: 14px;
+    color: #2f2f2f;
+    font-size: 22px;
+  }
+}
+
+.placeholder {
+  color: #8a8a8a;
+  font-style: italic;
+}
+
+
+
+
+

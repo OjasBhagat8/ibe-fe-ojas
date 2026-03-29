@@ -1,0 +1,185 @@
+@use "../../styles/variables" as *;
+
+.container {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 20px 24px;
+  border-radius: 8px;
+  background: #eeeeee;
+  font-family: $font-lato;
+
+  :global(.MuiTypography-root),
+  :global(.MuiFormControlLabel-label),
+  :global(.MuiButtonBase-root),
+  :global(.MuiSlider-valueLabelLabel) {
+    font-family: $font-lato !important;
+  }
+}
+
+.heading {
+  margin: 0 0 16px;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  line-height: 1.2;
+  color: #111111;
+}
+
+.accordion {
+  background: transparent !important;
+  border: 0 !important;
+  border-bottom: 1px solid #d3d3d3 !important;
+  box-shadow: none !important;
+
+  &::before {
+    display: none;
+  }
+}
+
+.summary {
+  min-height: 48px !important;
+  padding: 0 !important;
+
+  :global(.MuiAccordionSummary-content) {
+    min-width: 0;
+    margin: 14px 0 !important;
+  }
+
+  &:global(.Mui-expanded) {
+    min-height: 48px !important;
+  }
+}
+
+.expandIcon {
+  font-size: 20px !important;
+  color: #555555;
+}
+
+.summaryTitle {
+  min-width: 0;
+  font-size: 15px;
+  font-weight: 400;
+  color: #222222;
+  overflow-wrap: anywhere;
+}
+
+.details {
+  padding: 12px 0 !important;
+}
+
+.checkboxList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.checkboxLabel {
+  max-width: 100%;
+  margin: 0 !important;
+  align-items: flex-start;
+
+  :global(.MuiFormControlLabel-label) {
+    font-size: 16px;
+    color: #222222;
+    overflow-wrap: anywhere;
+  }
+}
+
+.checkbox {
+  padding: 6px 10px 6px 0 !important;
+  color: #b5b5b5 !important;
+
+  &:global(.Mui-checked) {
+    color: #2d2a7b !important;
+  }
+
+  :global(.MuiSvgIcon-root) {
+    font-size: 18px;
+  }
+}
+
+.rangeWrap {
+  width: 100%;
+  overflow: hidden;
+  padding: 8px 4px;
+  box-sizing: border-box;
+}
+
+.sliderWrap {
+  width: 100%;
+  min-width: 0;
+}
+
+.slider {
+  width: 100% !important;
+  margin-top: 8px !important;
+  color: #2d2a7b !important;
+
+  :global(.MuiSlider-thumb) {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+.rangeValues {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.rangeValue,
+.rangeValueEnd {
+  min-width: 36px;
+}
+
+.rangeValueEnd {
+  text-align: right;
+}
+
+.applyButton {
+  margin-top: 16px !important;
+  padding: 10px 16px !important;
+  border-radius: 4px !important;
+  background: #2d2a7b !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+
+  &:hover {
+    background: #252267 !important;
+    box-shadow: none !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 16px 14px;
+  }
+
+  .heading {
+    font-size: 18px;
+  }
+
+  .summaryTitle {
+    font-size: 14px;
+  }
+
+  .checkboxLabel {
+    :global(.MuiFormControlLabel-label) {
+      font-size: 14px;
+    }
+  }
+
+  .sliderWrap {
+    padding: 0 2px;
+  }
+}

@@ -1,0 +1,291 @@
+@use '../../../styles/housekeeping-tokens' as *;
+
+.page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.title {
+  font-weight: 700 !important;
+  color: $hk-text;
+  font-size: 2rem !important;
+  margin-bottom: 2px !important;
+}
+
+.subtitle {
+  color: #5f6778;
+  font-size: 0.96rem !important;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  :global(.MuiOutlinedInput-root) {
+    background: #fff;
+    border-radius: 10px;
+  }
+}
+
+.notifyButton {
+  border: 1px solid #d3d6df !important;
+  border-radius: 10px !important;
+  background: #fff !important;
+}
+
+.loadingWrap {
+  display: flex;
+  justify-content: center;
+  padding: 36px 0;
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+
+  @media (max-width: 1180px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.metricCard,
+.tableCard,
+.staffCard {
+  border-radius: 14px !important;
+  border: 1px solid #dcdfe6;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+}
+
+.metricLabel {
+  color: #5f6778;
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+}
+
+.metricValue {
+  margin-top: 8px !important;
+  margin-bottom: 10px !important;
+  font-size: 2.35rem !important;
+  font-weight: 700 !important;
+  color: #141a34;
+  line-height: 1 !important;
+}
+
+.metricHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.metricCardHealthy {
+  border-color: #bbf7d0;
+}
+
+.metricValueDanger {
+  color: #dc2626;
+  font-size: 1.9rem !important;
+}
+
+.metricValueSuccess {
+  color: #16a34a;
+}
+
+.capacityWarningIcon {
+  color: #d97706;
+}
+
+.metricHint {
+  color: #5f6778;
+  font-size: 0.95rem !important;
+}
+
+.metricHintSuccess {
+  color: #16a34a;
+}
+
+.progressBar {
+  margin-bottom: 10px;
+  border-radius: 999px;
+  height: 8px !important;
+  background-color: #e5e7eb !important;
+
+  :global(.MuiLinearProgress-bar) {
+    background-color: #1b1f6b !important;
+  }
+}
+
+.sectionTitle {
+  margin-bottom: 12px !important;
+  font-weight: 700 !important;
+  color: #141a34;
+  font-size: 1.75rem !important;
+}
+
+.bottomGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 14px;
+
+  @media (max-width: 1180px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.allocationTable {
+  width: 100%;
+}
+
+.allocationHeader,
+.allocationRow {
+  display: grid;
+  grid-template-columns: 1.2fr 1.15fr 1fr 1.1fr 1.2fr 40px;
+  align-items: center;
+  gap: 10px;
+}
+
+.allocationHeader {
+  color: #667085;
+  font-weight: 700;
+  font-size: 0.96rem;
+  padding: 8px 10px 12px;
+  border-bottom: 1px solid #e6e8ef;
+}
+
+.allocationRow {
+  padding: 12px 10px;
+  border-bottom: 1px solid #eceef4;
+  color: #1f2436;
+  font-size: 0.96rem;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.roomCell {
+  font-weight: 700;
+}
+
+.timeCell {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #55627a;
+  font-size: 0.92rem;
+}
+
+.moreCell {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.statusChip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  padding: 4px 10px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.statusCompleted {
+  background: #dcefe4;
+  color: #12824a;
+}
+
+.statusInProgress {
+  background: #f6e9dc;
+  color: #d97706;
+}
+
+.statusPending {
+  background: #eceff3;
+  color: #64748b;
+}
+
+.staffList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.staffRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.staffAvatar {
+  width: 46px !important;
+  height: 46px !important;
+  background: #e6e8f2 !important;
+  color: #152675 !important;
+  font-weight: 700 !important;
+  font-size: 1.1rem !important;
+}
+
+.staffInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.staffName {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #111b3a;
+}
+
+.staffTags {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.shiftTag,
+.availabilityTag {
+  border-radius: 8px;
+  padding: 4px 10px;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.shiftTag {
+  background: #e8ebf3;
+  color: #1c2b76;
+}
+
+.availabilityOnDuty {
+  background: #dcefe4;
+  color: #12824a;
+}
+
+.availabilityOnLeave {
+  background: #f6e9dc;
+  color: #d97706;
+}
+
+.availabilityOffDuty {
+  background: #eceff3;
+  color: #64748b;
+}
+
+.emptyRow {
+  text-align: center;
+  color: #7b859a;
+  padding: 20px 10px;
+}
