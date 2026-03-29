@@ -27,7 +27,7 @@ const NAV_ITEMS = [
   { label: 'Room Status', icon: <ApartmentIcon />, path: 'rooms' },
   { label: 'Task Overview', icon: <AssignmentOutlinedIcon />, path: 'tasks' },
   { label: 'Staff Board', icon: <GroupsOutlinedIcon />, path: 'staff-board' },
-  { label: 'Attendance', icon: <AccessTimeOutlinedIcon /> },
+  { label: 'Attendance', icon: <AccessTimeOutlinedIcon />, path: 'attendance' },
   { label: 'Performance', icon: <BarChartOutlinedIcon /> },
   { label: 'Audit Logs', icon: <ShieldOutlinedIcon /> },
 ];
