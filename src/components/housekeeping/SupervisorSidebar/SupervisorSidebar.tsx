@@ -24,8 +24,8 @@ const SIDEBAR_WIDTH = 280;
 
 const NAV_ITEMS = [
   { label: 'Dashboard', icon: <DashboardOutlinedIcon />, path: 'dashboard' },
-  { label: 'Room Status', icon: <ApartmentIcon /> },
-  { label: 'Task Overview', icon: <AssignmentOutlinedIcon /> },
+  { label: 'Room Status', icon: <ApartmentIcon />, path: 'rooms' },
+  { label: 'Task Overview', icon: <AssignmentOutlinedIcon />, path: 'tasks' },
   { label: 'Staff Board', icon: <GroupsOutlinedIcon /> },
   { label: 'Attendance', icon: <AccessTimeOutlinedIcon /> },
   { label: 'Performance', icon: <BarChartOutlinedIcon /> },

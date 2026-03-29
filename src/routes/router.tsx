@@ -19,6 +19,8 @@ import ApplyLeavePage from "../pages/housekeeping/ApplyLeave/ApplyLeavePage";
 import ShiftProgressPage from "../pages/housekeeping/ShiftProgress/ShiftProgressPage";
 import SupervisorAuthGuard from "../layouts/SupervisorAuthGuard";
 import SupervisorDashboardPage from "../pages/housekeeping/SupervisorDashboard/SupervisorDashboardPage";
+import RoomStatusPage from "../pages/housekeeping/RoomStatus/RoomStatusPage";
+import TaskOverviewPage from "../pages/housekeeping/TaskOverview/TaskOverviewPage";
 import SupervisorLayout from "../layouts/SupervisorLayout";
 
 export const router = createBrowserRouter([
@@ -73,6 +75,14 @@ export const router = createBrowserRouter([
               {
                 path: "dashboard",
                 element: <SupervisorDashboardPage />,
+              },
+              {
+                path: "rooms",
+                element: <RoomStatusPage />,
+              },
+              {
+                path: "tasks",
+                element: <TaskOverviewPage />,
               },
             ],
           },

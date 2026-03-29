@@ -52,7 +52,7 @@
 
 .metricsGrid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 14px;
 
   @media (max-width: 1180px) {
@@ -83,9 +83,37 @@
   line-height: 1 !important;
 }
 
+.metricHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.metricCardHealthy {
+  border-color: #bbf7d0;
+}
+
+.metricValueDanger {
+  color: #dc2626;
+  font-size: 1.9rem !important;
+}
+
+.metricValueSuccess {
+  color: #16a34a;
+}
+
+.capacityWarningIcon {
+  color: #d97706;
+}
+
 .metricHint {
   color: #5f6778;
   font-size: 0.95rem !important;
+}
+
+.metricHintSuccess {
+  color: #16a34a;
 }
 
 .progressBar {

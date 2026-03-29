@@ -1,0 +1,128 @@
+@use '../../../styles/housekeeping-tokens' as *;
+
+.tableWrap {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x;
+  padding-bottom: 2px;
+}
+
+.header,
+.row {
+  display: grid;
+  grid-template-columns: 1.2fr 1.1fr 1.2fr 1fr 0.9fr 1fr 1fr 0.7fr 1fr 56px;
+  align-items: center;
+  gap: 10px;
+  min-width: 1040px;
+}
+
+.header {
+  color: #667085;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 8px 12px 12px;
+  border-bottom: 1px solid $hk-border;
+}
+
+.row {
+  padding: 12px;
+  border-bottom: 1px solid #eceef4;
+  color: $hk-text;
+  font-size: 0.9rem;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.roomCell {
+  font-weight: 700;
+}
+
+.mutedCell {
+  color: $hk-text-muted;
+}
+
+.timeCell {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #55627a;
+  font-size: 0.88rem;
+}
+
+.durationCell {
+  font-weight: 600;
+  color: $hk-text;
+}
+
+.actionsCell {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.empty {
+  text-align: center;
+  color: $hk-text-muted;
+  padding: 24px 12px;
+  font-size: 0.9rem;
+}
+
+// Task type chips
+.taskTypeChip {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 9px;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.taskTypeDeep {
+  background: #e8ebf3;
+  color: $hk-navy;
+}
+
+.taskTypeDaily {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.taskTypeVacant {
+  background: #eceff3;
+  color: #64748b;
+}
+
+// Status chips
+.statusChip {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.statusCompleted {
+  background: #dcefe4;
+  color: #12824a;
+}
+
+.statusInProgress {
+  background: #f6e9dc;
+  color: #d97706;
+}
+
+.statusPending {
+  background: #eceff3;
+  color: #64748b;
+}
+
+@media (max-width: 767px) {
+  .header,
+  .row {
+    min-width: 1080px;
+  }
+}
