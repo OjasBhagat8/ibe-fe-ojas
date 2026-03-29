@@ -255,3 +255,41 @@ export interface StaffAttendanceMonitoringResponse {
   averageAssignedHours: number;
   staff: StaffAttendanceMonitoringItem[];
 }
+
+export type PerformancePreset = 'LAST_7_DAYS' | 'LAST_30_DAYS';
+
+export interface PerformanceRange {
+  from: string;
+  to: string;
+  presetApplied: PerformancePreset | null;
+}
+
+export interface PerformanceKpis {
+  utilizationRate: number;
+  taskCompletionRate: number;
+  avgCompletionTimeHours: number;
+}
+
+export interface PerformanceTrendPoint {
+  date: string;
+  utilizationRate: number;
+  taskCompletionRate: number;
+  avgCompletionTimeHours: number;
+}
+
+export interface PerformanceStaffRow {
+  staffId: string;
+  staffName: string;
+  assignedTasks: number;
+  completedTasks: number;
+  completionRate: number;
+  avgCompletionTimeHours: number;
+  utilizationPercent: number;
+}
+
+export interface SupervisorPerformanceResponse {
+  range: PerformanceRange;
+  kpis: PerformanceKpis;
+  trend: PerformanceTrendPoint[];
+  staffPerformance: PerformanceStaffRow[];
+}

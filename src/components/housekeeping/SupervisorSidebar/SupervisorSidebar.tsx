@@ -28,7 +28,7 @@ const NAV_ITEMS = [
   { label: 'Task Overview', icon: <AssignmentOutlinedIcon />, path: 'tasks' },
   { label: 'Staff Board', icon: <GroupsOutlinedIcon />, path: 'staff-board' },
   { label: 'Attendance', icon: <AccessTimeOutlinedIcon />, path: 'attendance' },
-  { label: 'Performance', icon: <BarChartOutlinedIcon /> },
+  { label: 'Performance', icon: <BarChartOutlinedIcon />, path: 'performance' },
   { label: 'Audit Logs', icon: <ShieldOutlinedIcon /> },
 ];
 
