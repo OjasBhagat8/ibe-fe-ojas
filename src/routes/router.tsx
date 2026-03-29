@@ -24,6 +24,7 @@ import TaskOverviewPage from "../pages/housekeeping/TaskOverview/TaskOverviewPag
 import StaffBoardPage from "../pages/housekeeping/StaffBoard/StaffBoardPage";
 import SupervisorLayout from "../layouts/SupervisorLayout";
 import AttendanceMonitoringPage from "../pages/housekeeping/AttendanceMonitoring/AttendanceMonitoringPage";
+import PerformancePage from "../pages/housekeeping/Performance/PerformancePage";
 
 export const router = createBrowserRouter([
   {
@@ -93,6 +94,10 @@ export const router = createBrowserRouter([
               {
                 path: "attendance",
                 element: <AttendanceMonitoringPage />,
+              },
+              {
+                path: "performance",
+                element: <PerformancePage />,
               },
             ],
           },
