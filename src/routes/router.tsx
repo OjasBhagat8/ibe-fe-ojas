@@ -21,6 +21,7 @@ import SupervisorAuthGuard from "../layouts/SupervisorAuthGuard";
 import SupervisorDashboardPage from "../pages/housekeeping/SupervisorDashboard/SupervisorDashboardPage";
 import RoomStatusPage from "../pages/housekeeping/RoomStatus/RoomStatusPage";
 import TaskOverviewPage from "../pages/housekeeping/TaskOverview/TaskOverviewPage";
+import StaffBoardPage from "../pages/housekeeping/StaffBoard/StaffBoardPage";
 import SupervisorLayout from "../layouts/SupervisorLayout";
 
 export const router = createBrowserRouter([
@@ -83,6 +84,10 @@ export const router = createBrowserRouter([
               {
                 path: "tasks",
                 element: <TaskOverviewPage />,
+              },
+              {
+                path: "staff-board",
+                element: <StaffBoardPage />,
               },
             ],
           },

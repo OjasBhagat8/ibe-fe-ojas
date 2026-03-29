@@ -203,3 +203,30 @@ export interface SupervisorDashboardOverview {
   taskAllocation: TaskAllocationRow[];
   staffAvailability: StaffAvailabilityItem[];
 }
+
+export type AvailabilityStatus = 'ON_DUTY' | 'OFF_DUTY' | 'ON_LEAVE' | 'SICK';
+
+export interface StaffBoardStaffItem {
+  staffId: string;
+  staffName: string;
+  initials: string;
+  role: string;
+  availabilityStatus: AvailabilityStatus;
+  assignedHours: number;
+  shiftCapacityHours: number;
+  assignedRooms: string[];
+}
+
+export interface StaffBoardShiftGroup {
+  shiftName: string;
+  startTime: string;
+  endTime: string;
+  durationHours: number;
+  staffCount: number;
+  staff: StaffBoardStaffItem[];
+}
+
+export interface StaffBoardResponse {
+  date: string;
+  shifts: StaffBoardShiftGroup[];
+}
