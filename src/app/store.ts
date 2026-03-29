@@ -24,6 +24,7 @@ import supervisorDashboardReducer from "../features/supervisorDashboard/supervis
 import roomStatusReducer from "../features/roomStatus/roomStatusSlice";
 import supervisorTasksReducer from "../features/supervisorTasks/supervisorTasksSlice";
 import staffBoardReducer from "../features/staffBoard/staffBoardSlice";
+import attendanceMonitoringReducer from "../features/attendanceMonitoring/attendanceMonitoringSlice";
 
 const rootReducer = combineReducers({
   tenant: tenantReducer,
@@ -40,6 +41,7 @@ const rootReducer = combineReducers({
   roomStatus: roomStatusReducer,
   supervisorTasks: supervisorTasksReducer,
   staffBoard: staffBoardReducer,
+  attendanceMonitoring: attendanceMonitoringReducer,
 });
 
 const persistedReducer = persistReducer(

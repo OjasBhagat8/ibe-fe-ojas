@@ -230,3 +230,28 @@ export interface StaffBoardResponse {
   date: string;
   shifts: StaffBoardShiftGroup[];
 }
+
+export type AttendanceMonitoringStatus = 'COMPLETE' | 'IN_PROGRESS' | 'ABSENT';
+
+export interface StaffAttendanceMonitoringItem {
+  staffId: string;
+  staffName: string;
+  shift: string;
+  clockIn: string;
+  clockOut: string;
+  totalWorkedHours: number;
+  totalWorkedHoursDisplay: string;
+  assignedHours: number;
+  status: AttendanceMonitoringStatus;
+  present: boolean;
+}
+
+export interface StaffAttendanceMonitoringResponse {
+  propertyId: string;
+  date: string;
+  totalClockedIn: number;
+  totalStaff: number;
+  totalWorkingHours: number;
+  averageAssignedHours: number;
+  staff: StaffAttendanceMonitoringItem[];
+}
